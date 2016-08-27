@@ -4,20 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <!-- Compiled and minified CSS -->
-  <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="http://bootswatch.com/2/slate/bootstrap.min.css">
   <!--Import Google Icon Font-->
   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <title>Scrape Scroll Tag</title>
   <style>
-    .default_color{background-color: #2196F3 !important}
-
-    .default_color_text{color: #2196F3 !important}
-
-    .icon-block {
-      padding: 0 15px;
-    }
-    .in{font-weight: 400 !important; font-style: normal !important;
     }
     body{
       background: url(/images/henryhighbury.png) no-repeat center fixed;
@@ -53,7 +46,7 @@
       height:200px;
       font-size: 18px;
     }
-    #overlay {
+/*    #overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -62,32 +55,40 @@
     background: #000;
     opacity: 0.5;
     filter: alpha(opacity=50);
-    }
-    #modal {
+    }*/
+/*    #modal {
     position:absolute;
     background:url(tint20.png) 0 0 repeat;
     background:rgba(0,0,0,0.2);
     border-radius:14px;
     padding:8px;
-    }
+    }*/
   </style>
 </head>
 <body>
   <header>
-    <nav class="top-nav">
-      <div class="container">
-        <div class="nav-wrapper">
-          <p class="page-title">Scrape.Scroll.Tag...</p>
-            <p>..your way through the latest sports headlines</p>
+      <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="#">
+                <strong>Scrape.Scroll.Tag.</strong> <small>..your way through the latest sports headlines</small>
+              </a>
+            </div>
         </div>
-      </div>
-    </nav>
+      </nav>
   </header>
 
   <div id="wrapper">
-    <div id="articles" class="row col s6 offset-s3">
-      <div id="overlay">
-        <div id="messageModal" class="modal">
+    <div class="row">
+      <div id="articles" class="col-sm-6 col-sm-offset-3">
+          <div class="modal">
+            <div class="model-dialog">
+              <div class="modal-content">
+                </div>
+                  <div id="messageModal" class="modal-header">
+                </div>
+              </div>
+            </div>
         </div>
       </div>
     </div>
@@ -95,7 +96,7 @@
 
   <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
   <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   <script src="app.js"></script>
 </body>
 </html>

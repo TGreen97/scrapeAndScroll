@@ -1,7 +1,7 @@
 // Get Articles as a JSON
 $.getJSON('/articles', function(data) {
   for (var i=0; i<data.length; i++) {
-    $('#articles').append('<div class="card horizontal"> <div class="card-content"> <p data-id="' + data[i]._id + '">'+ data[i].title + '<br />'+ data[i].link + '<a id="open-modal" class="modal-trigger" href="#messageModal"></a> </p> </div> </div>');
+    $('#articles').append('<div class="well well-sm"> <p data-id="' + data[i]._id + '">'+ data[i].title + '<br />'+ data[i].link + '<a data-dismiss="modal" data-target="#messageModal" class="close" href="#messageModal"></a> </p> </div>');
   }
 });
 
@@ -9,7 +9,7 @@ $.getJSON('/articles', function(data) {
 $(function() {
   $(document).on('click', 'p', function() {
     // $('#messages').empty();
-    // $('#messageModal').openModal();
+    $('#messageModal').modal('show');
 
     var thisID = $(this).attr('data-id');
 
@@ -20,15 +20,13 @@ $(function() {
 
       .done(function( data ) {
         console.log(data);
-        $('#messageModal').append('<div class="modal"> <div class="modal-content"> <h3>' + data.title + '</h3> </div> </div>');
+        $('#messageModal').append(' <h3>' + data.title + '</h3>');
 
-        // $('#messageModal').append('<div class="modal"> <div class="modal-content"> <input id="titleinput" name="title"> </div> </div>');
+        $('#messageModal').append(' <input id="titleinput" name="title">');
 
-        // $('#messageModal').append('<div class="modal"> <div class="modal-content"> <textarea id="bodyinput" name="body"></textarea> </div> </div>');
+        $('#messageModal').append(' <textarea id="bodyinput" name="body"></textarea> ');
 
-        // $('#messageModal').append('<div class="modal modal-footer"> <a href="#!" class="modal-action modal-close" data-id="' + data._id + '" id="savemessage">Save Message</a> </div>');
-
-        $('.modal-trigger').openModal();
+        $('#messageModal').append('<div class="modal-footer"> <a href="#!" class="btn btn-default" data-dismiss="modal" aria-hidden=true data-id="' + data._id + '" id="savemessage">Save Message</a> </div>');
 
         if(data.message) {
           $('#titleinput').val(data.message.title);
