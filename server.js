@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded ({
 app.use(express.static('public'));
 
 // Database configuration with Mongoose
-mongoose.connect('mongodb://localhost/week18scrapeTag');
+mongoose.connect('mongodb://heroku_2mvbxs0f:2ebru3rfehd3s8ngii03rn1uet@ds017726.mlab.com:17726/heroku_2mvbxs0f');
 var db = mongoose.connection;
 
 // Display Mongoose Errors
